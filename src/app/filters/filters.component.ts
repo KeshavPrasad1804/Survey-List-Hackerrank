@@ -16,7 +16,8 @@ export class Filters implements OnInit {
 
   }
   onFilter(filterValue: string) {
-    this.onFilterSelected.emit(filterValue);
-    this.selectedFilter=filterValue
+     this.selectedFilter=this.selectedFilter==filterValue?'':filterValue;
+    this.onFilterSelected.emit(this.selectedFilter);
+   
   }
 }
